@@ -23,7 +23,7 @@ class HomeController extends Controller
         $activitys = Activity::latest()->take(3)->get();
         $activities = Activity::latest()->take(4)->get();
         $blogs = Blog::orderBy('created_at', 'DESC')->paginate(3);
-        $galleries = Gallery::orderBy('created_at', 'DESC')->paginate(12);
+        // $galleries = Gallery::orderBy('created_at', 'DESC')->paginate(12);
     
         return view('maincomponent.index',compact('events', 'activitys', 'activities', 'blogs', 'galleries'));
         // $this->middleware('auth')->except(['home']);
